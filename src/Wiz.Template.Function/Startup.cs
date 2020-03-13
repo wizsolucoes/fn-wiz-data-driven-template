@@ -14,7 +14,7 @@ namespace Wiz.Template.Function
         {
             builder.Services.AddHttpClient<IViaCEPService, ViaCEPService>((s, c) =>
             {
-                c.BaseAddress = new Uri(Environment.GetEnvironmentVariable("ViaCEP:Url"));
+                c.BaseAddress = new Uri(Environment.GetEnvironmentVariable("ViaCEPUrl"));
                 c.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             });
         }

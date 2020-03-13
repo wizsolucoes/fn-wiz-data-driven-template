@@ -40,15 +40,15 @@ namespace Wiz.Template.Function
                 return new BadRequestObjectResult($"CEP required.");
             }
 
-            var viaCEPSevice = await _viaCEPService.GetByCEPAsync(cep);
+            var service = await _viaCEPService.GetByCEPAsync(cep);
 
-            var responseMessage = $@"
-                CEP: {viaCEPSevice.CEP}
-                Street: {viaCEPSevice.Street}
-                StreetFull: {viaCEPSevice.StreetFull}
-                UF: {viaCEPSevice.UF}";
-
-            return new OkObjectResult(responseMessage);
+            return new OkObjectResult(new
+            {
+                CEP = service.CEP,
+                Street = service.Street,
+                StreetFull = service.StreetFull,
+                UF = service.UF
+            });
         }
     }
 }
