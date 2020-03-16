@@ -2,6 +2,7 @@ using System;
 using System.Net.Http.Headers;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
+using Wiz.Template.Auth;
 using Wiz.Template.Function.Services;
 using Wiz.Template.Function.Services.Interfaces;
 
@@ -17,6 +18,12 @@ namespace Wiz.Template.Function
                 c.BaseAddress = new Uri(Environment.GetEnvironmentVariable("ViaCEPUrl"));
                 c.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             });
+
+            var audience = Environment.GetEnvironmentVariable("Audience");
+            var issuer = Environment.GetEnvironmentVariable("Issuer");
+
+            builder.Services.AddSingleton<IAccessTokenProvider, AccessTokenProvider>
+                (s => new AccessTokenProvider(audience, issuer));
         }
     }
 }

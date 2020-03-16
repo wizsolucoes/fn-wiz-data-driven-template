@@ -22,13 +22,15 @@ namespace Wiz.Template.Function
         {
             log.LogInformation("C# timer trigger function processed a request.");
 
-            var viaCEPSevice = await _viaCEPService.GetByCEPAsync(cep: "29315755");
+            var service = await _viaCEPService.GetByCEPAsync(cep: "29315755");
 
-            var responseMessage = $@"
-                CEP: {viaCEPSevice.CEP}
-                Street: {viaCEPSevice.Street}
-                StreetFull: {viaCEPSevice.StreetFull}
-                UF: {viaCEPSevice.UF}";
+            var responseMessage = new
+            {
+                CEP = service.CEP,
+                Street = service.Street,
+                StreetFull = service.StreetFull,
+                UF = service.UF
+            };
 
             log.LogInformation($"{responseMessage}");
 

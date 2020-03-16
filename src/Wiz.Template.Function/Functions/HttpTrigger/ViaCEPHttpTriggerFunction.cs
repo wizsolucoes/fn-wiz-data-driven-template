@@ -6,16 +6,19 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using Wiz.Template.Auth;
 using Wiz.Template.Function.Services.Interfaces;
 
 namespace Wiz.Template.Function
 {
     public class ViaCEPHttpTriggerFunction
     {
+        private readonly IAccessTokenProvider _tokenProvider;
         private readonly IViaCEPService _viaCEPService;
 
-        public ViaCEPHttpTriggerFunction(IViaCEPService viaCEPService)
+        public ViaCEPHttpTriggerFunction(IAccessTokenProvider tokenProvider, IViaCEPService viaCEPService)
         {
+            _tokenProvider = tokenProvider;
             _viaCEPService = viaCEPService;
         }
 
@@ -26,6 +29,11 @@ namespace Wiz.Template.Function
             ILogger log)
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
+
+            var tokenResult = await _tokenProvider.ValidateToken(req);
+
+            log.LogInformation($"Token result: {tokenResult.Status.ToString()}");
+            log.LogInformation($"Request received for {tokenResult.Principal?.Identity.Name}.");
 
             string cep = req.Query["cep"];
 
