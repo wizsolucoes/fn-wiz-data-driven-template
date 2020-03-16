@@ -1,4 +1,6 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS installer-env
+# Stage: Development
+
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS development
 
 COPY . /src/dotnet-function-app
 RUN cd /src/dotnet-function-app && \
@@ -10,5 +12,12 @@ RUN cd /src/dotnet-function-app && \
 FROM mcr.microsoft.com/azure-functions/dotnet:3.0
 ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
     AzureFunctionsJobHost__Logging__Console__IsEnabled=true
+ENV ASPNETCORE_ENVIRONMENT=Development
+ENV ViaCEPUrl=https://viacep.com.br/ws/
+ENV Issuer=URL_SSO
+ENV Audience=SSO_SCOPE
+ENV AzureWebJobsStorage=URL_STORAGE
 
-COPY --from=installer-env ["/home/site/wwwroot", "/home/site/wwwroot"]
+EXPOSE 7071
+
+COPY --from=development ["/home/site/wwwroot", "/home/site/wwwroot"]

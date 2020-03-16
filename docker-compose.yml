@@ -10,5 +10,3 @@ services:
       - '.:/app'
     ports:
       - '7071:80'
-    environment:
-      - ViaCEP:Url=https://viacep.com.br/ws/
