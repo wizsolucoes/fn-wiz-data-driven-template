@@ -12,5 +12,7 @@ namespace Wiz.Template.Function.Models
         public string StreetFull { get; set; }
         [JsonPropertyName("uf")]
         public string UF { get; set; }
+
+        public static string CEPFormat(string cep) => cep.Replace("-", string.Empty);
     }
 }

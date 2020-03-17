@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
+using Wiz.Template.Function.Models;
 using Wiz.Template.Function.Services.Interfaces;
 
 namespace Wiz.Template.Function
@@ -26,7 +27,7 @@ namespace Wiz.Template.Function
 
             var responseMessage = new
             {
-                CEP = service.CEP,
+                CEP = ViaCEP.CEPFormat(service.CEP),
                 Street = service.Street,
                 StreetFull = service.StreetFull,
                 UF = service.UF
@@ -34,7 +35,7 @@ namespace Wiz.Template.Function
 
             log.LogInformation($"{responseMessage}");
 
-            log.LogInformation($"C# timer trigger function finished {DateTime.Now}.");
+            log.LogInformation($"C# timer trigger function finished.");
         }
     }
 }

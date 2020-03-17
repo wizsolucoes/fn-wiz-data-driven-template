@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Wiz.Template.Auth;
 using Wiz.Template.Function.Services.Interfaces;
+using Wiz.Template.Function.Models;
 
 namespace Wiz.Template.Function
 {
@@ -52,7 +53,7 @@ namespace Wiz.Template.Function
 
             return new OkObjectResult(new
             {
-                CEP = service.CEP,
+                CEP = ViaCEP.CEPFormat(service.CEP),
                 Street = service.Street,
                 StreetFull = service.StreetFull,
                 UF = service.UF
