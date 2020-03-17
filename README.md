@@ -1,5 +1,7 @@
 # Wiz - Azure Function V3
 
+![](https://github.com/wizsolucoes/fn-wiz-driven-template/workflows/Docker%20Image%20CI/badge.svg)
+
 - [Desenvolvimento, por onde começar](#desenvolvimento-por-onde-começar)
 - [Execução do projeto](#execução-do-projeto)
 - [Estrutura](#estrutura)
