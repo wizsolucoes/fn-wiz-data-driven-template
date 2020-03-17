@@ -118,7 +118,7 @@ Terminal -> Run Task
 
 > *docker-compose logs*
 
-3. Para e remover container:
+3. Parar e remover container:
 
 > *docker-compose down*
 
