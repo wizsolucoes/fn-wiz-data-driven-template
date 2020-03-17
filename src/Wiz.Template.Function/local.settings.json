@@ -4,7 +4,7 @@
     "Issuer": "URL_SSO",
     "Audience": "SSO_SCOPE",
     "ViaCEPUrl": "https://viacep.com.br/ws/",
-    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "AzureWebJobsStorage": "URL_STORAGE",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet"
   }
 }

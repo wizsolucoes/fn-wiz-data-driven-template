@@ -55,6 +55,15 @@
             "problemMatcher": "$msCompile"
         },
         {
+            "label": "restore",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "restore"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
             "type": "func",
             "dependsOn": "build",
             "options": {
@@ -63,7 +72,7 @@
             "command": "host start",
             "isBackground": true,
             "problemMatcher": "$func-watch"
-        }
+        },
         {
             "label": "test",
             "command": "dotnet",
