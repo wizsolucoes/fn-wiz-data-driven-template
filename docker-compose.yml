@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  api:
+    container_name: fn_wiz_driven_template
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+    ports:
+      - '7071:80'
