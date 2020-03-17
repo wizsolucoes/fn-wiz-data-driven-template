@@ -1,0 +1,10 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "Issuer": "URL_SSO",
+    "Audience": "SSO_SCOPE",
+    "ViaCEPUrl": "https://viacep.com.br/ws/",
+    "AzureWebJobsStorage": "URL_STORAGE",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet"
+  }
+}
