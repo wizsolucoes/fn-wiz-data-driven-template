@@ -21,7 +21,7 @@ Passos para execução do projeto:
 
 4. Na pasta criada para o novo projeto executar os seguintes comandos;
   > *dotnet new -i [PathLocalRepositorioGitHub]*    
-    *dotnet new wizfunctiondriven-v3 -n [NomeProjeto]*
+    *dotnet new wizfunctiondriven -n [NomeProjeto]*
 
 5. Instalar pacote *npm* **Azure Function V3** conforme [documentação](https://github.com/Azure/azure-functions-core-tools);
 
@@ -116,7 +116,7 @@ Terminal -> Run Task
 
 > *docker-compose logs*
 
-3. Para e remover container:
+3. Parar e remover container:
 
 > *docker-compose down*
 
