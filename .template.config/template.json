@@ -11,7 +11,7 @@
   "generatorVersions": "[1.0.0.0-*)",
   "identity": "Wiz.Template.Function",
   "groupIdentity": "Wiz.Template.Function.v3",
-  "shortName": "wizfunctiondriven-v3",
+  "shortName": "wizfunctiondriven",
   "tags": {
     "language": "C#",
     "type": "project"
