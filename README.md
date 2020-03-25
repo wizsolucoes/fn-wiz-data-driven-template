@@ -19,15 +19,20 @@ Passos para execução do projeto:
 
 2. Clonar repositório no local desejado;
 
-3. Criar pasta para o novo projeto no local desejado;
+3. Apagar a pasta oculta **.git**;
 
-4. Na pasta criada para o novo projeto executar os seguintes comandos;
+4. Na pasta onde o projeto foi clonado execute o seguinte comando;
+  > *dotnet restore*
+
+5. Criar pasta para o novo projeto no local desejado;
+
+6. Na pasta criada para o novo projeto executar os seguintes comandos;
   > *dotnet new -i [PathLocalRepositorioGitHub]*    
     *dotnet new wizfunctiondriven -n [NomeProjeto]*
 
-5. Instalar pacote *npm* **Azure Function V3** conforme [documentação](https://github.com/Azure/azure-functions-core-tools);
+7. Instalar pacote *npm* **Azure Function V3** conforme [documentação](https://github.com/Azure/azure-functions-core-tools);
 
-6. Incluir configurações de *varíaveis de ambiente* no caminho abaixo:
+8. Incluir configurações de *varíaveis de ambiente* no caminho abaixo:
 
 ### **Local**
 
@@ -198,6 +203,18 @@ Comandos para geração de relatório de testes:
   ```
 
 O relatório dos testes são gerados na pasta **code_coverage** localizada na raiz do projeto.
+
+### **Sonar**
+
+1. Dentro do arquivo dos projetos **(.csproj)** no campo **PropertyGroup**, é necessário adicionar um GUID no formato abaixo:
+
+```
+<PropertyGroup>
+  <ProjectGuid>{b5c970c2-a7cc-4052-b07b-b599b83fc621}</ProjectGuid>
+</PropertyGroup>
+```
+
+2. O GUID pode ser coletado no arquivo da solution ou criado pelo site: https://www.guidgenerator.com/.
 
 ## NuGet privado
 
