@@ -1,7 +1,7 @@
 version: '3.7'
 
 services:
-  api:
+  fn:
     container_name: fn_wiz_driven_template
     build:
       context: .
