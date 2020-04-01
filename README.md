@@ -15,20 +15,14 @@
 
 Passos para execução do projeto:
 
-1. Abrir *Prompt de Comando* de sua preferência (**CMD** ou **PowerShell**);
+1. Abrir *Prompt de Comando* de sua preferência no modo **Administrador** (**CMD** ou **PowerShell**);
 
-2. Clonar repositório no local desejado;
+2. Criar pasta para o projeto no local desejado;
 
-3. Apagar a pasta oculta **.git**;
+3. Executar os seguintes comandos;
+  > *dotnet new -i Wiz.Dotnet.Template.Function.DataDriven*
 
-4. Na pasta onde o projeto foi clonado execute o seguinte comando;
-  > *dotnet restore*
-
-5. Criar pasta para o novo projeto no local desejado;
-
-6. Na pasta criada para o novo projeto executar os seguintes comandos;
-  > *dotnet new -i [PathLocalRepositorioGitHub]*    
-    *dotnet new wizfunctiondatadriven -n [NomeProjeto]*
+  > *dotnet new wizapidatadriven -n [NomeProjeto]*
 
 7. Instalar pacote *npm* **Azure Function V3** conforme [documentação](https://github.com/Azure/azure-functions-core-tools);
 
