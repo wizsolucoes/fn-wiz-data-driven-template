@@ -21,4 +21,8 @@
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
   </ItemGroup>
+
+  <Target Name="InstallNpm" BeforeTargets="_GenerateRestoreProjectSpec">
+    <Exec Command="npm install" ConsoleToMsBuild="true" />
+  </Target>
 </Project>
