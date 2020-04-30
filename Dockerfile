@@ -2,6 +2,10 @@
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS development
 
+RUN apt-get update -y
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash --debug
+RUN apt-get install nodejs -yq
+
 COPY . /src/dotnet-function-app
 RUN cd /src/dotnet-function-app && \
     mkdir -p /home/site/wwwroot && \
