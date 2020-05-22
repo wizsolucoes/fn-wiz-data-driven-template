@@ -22,7 +22,7 @@ Passos para execução do projeto:
 3. Executar os seguintes comandos;
   > *dotnet new -i Wiz.Dotnet.Template.Function.DataDriven*
 
-  > *dotnet new wizapidatadriven -n [NomeProjeto]*
+  > *dotnet new wizfunctiondatadriven -n [NomeProjeto]*
 
 7. Instalar pacote *npm* **Azure Function V3** conforme [documentação](https://github.com/Azure/azure-functions-core-tools);
 
